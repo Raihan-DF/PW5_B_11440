@@ -16,9 +16,63 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('Login');
 });
+Route::get('/Login', function () {
+    return view('Login');           
+});
 Route::get('/dashboard', function () {
     return view('Dashboard');
 });
+
+Route::get('/presensi', function () {
+    return view('Gyms/presensi',[
+        'kartu' => [
+            [
+                'nama'=> 'Raihan Dwi Febrian',
+                'email'=> 'raihan@gmail.com',
+                'noTelp'=> '0812121212',
+                'jenis'=> 'Gold',
+                'metode'=> 'Deposit Kelas',
+            ],
+            [
+                'nama'=> 'Bagus Pramono Aji',
+                'email'=> 'bagus@gmail.com',
+                'noTelp'=> '0812121212',
+                'jenis'=> 'Silver',
+                'metode'=> 'Deposit Uang',
+            ],
+            [
+                'nama'=> 'Joel Christian Ngongoloy',
+                'email'=> 'joel@gmail.com',
+                'noTelp'=> '0812121212',
+                'jenis'=> 'Black',
+                'metode'=> 'Deposit Kelas',
+            ],
+            [
+                'nama'=> 'Boniface Fredo Ronan',
+                'email'=> 'fredo@gmail.com',
+                'noTelp'=> '0812121212',
+                'jenis'=> 'Black',
+                'metode'=> 'Deposit Uang',
+            ],
+            [
+                'nama'=> 'Jhery Pranata Sembayang',
+                'email'=> 'jhery@gmail.com',
+                'noTelp'=> '0812121212',
+                'jenis'=> 'Gold',
+                'metode'=> 'Deposit Kelas',
+            ],
+            [
+                'nama'=> 'Yessa Nugreheni',
+                'email'=> 'yessa@gmail.com',
+                'noTelp'=> '0812121212',
+                'jenis'=> 'Silver',
+                'metode'=> 'Deposit Uang',
+            ]
+        ]
+    ]);
+});
+
+
 Route::get('/gyms', function () {
     return view('Gyms/index', [
         'kelas' => [
@@ -57,3 +111,4 @@ Route::get('/gyms', function () {
         ]
     ]);
 });
+

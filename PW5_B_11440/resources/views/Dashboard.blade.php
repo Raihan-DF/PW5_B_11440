@@ -19,6 +19,7 @@
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <!-- Navbar -->
+
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
@@ -32,9 +33,10 @@
             <ul class="navbar-nav ml-auto ">
                 <!-- Navbar Search -->
                 <li class="nav-item d-flex align-items-center">
-                    <button class="btn btn-sm btn-danger">
+                    <button id="logout-button" class="btn btn-sm btn-danger">
                         <i class="fa-solid fa-right-from-bracket"></i> Logout
                     </button>
+
                     <div class="navbar-search-block">
                         <form class="form-inline">
                             <div class="input-group input-group-sm">
@@ -51,10 +53,10 @@
                         </form>
                     </div>
                 </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                            <i class="fas fa-expand-arrows-alt"></i>
-                        </a>
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </a>
                 </li>
             </ul>
         </nav>
@@ -97,6 +99,12 @@
                                 <p> Home</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ url('presensi') }}" class="nav-link">
+                                <i class="nav-icon far fa-circle"></i>
+                                <p> Presensi</p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -117,6 +125,23 @@
             <strong>Copyright &copy; {{ date('Y') }} <a href="#">Gofit</a>. </strong> All rights reserved.
         </footer>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: blue;">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel" style="color: white;"><strong>Anda Ingin Logout?</strong></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" style="background-color: white; color: black;" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="confirmLogout" style="background-color: red;">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- ./wrapper -->
     <!-- REQUIRED SCRIPTS -->
     <!-- jQuery -->
@@ -125,6 +150,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('js/adminlte.min.js') }}"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var logoutButton = document.getElementById("logout-button");
+            logoutButton.addEventListener("click", function() {
+                var staticBackdropModal = new bootstrap.Modal(document.getElementById("staticBackdrop"));
+                staticBackdropModal.show();
+                $("#confirmLogout").click(function() {
+                    window.location.href = '/Login';
+                });
+
+            });
+        });
+    </script>
+
+
 </body>
 
 </html>
