@@ -28,7 +28,7 @@
 </style>
 
 <div class="row justify-content-center mt-3">
-    <div class="col-md-11">
+    <div class="col-md-10">
         <div class="card" style="height: auto">
             <div class="card-body">
                 <div class="item-body" style="display: flex; justify-content: space-between; ">
@@ -114,9 +114,9 @@
 
 <div class="kotak-kartu$kartuMember" style="display: flex; justify-content: space-between; ">
     <div>
-        <h3 class="daftarMember" style="margin-left: 65px;"><strong>Daftar Member</strong></h3>
+        <h3 class="daftarMember" style="margin-left: 153px;"><strong>Daftar Member</strong></h3>
     </div>
-    <div class="presensiBtn" style="margin-right: 70px;">
+    <div class="presensiBtn" style="margin-right: 133px;">
         <button type="button" class="btn btn-primary" id="liveToastBtn"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                 <style>
                     svg {
@@ -144,11 +144,11 @@
 
 @forelse ($kartu as $member)
 @if ($loop->iteration % 3 == 1)
-<div class="row justify-content-center mt-3">
+<div class="row justify-content-center mt-2">
     @endif
 
     @if ($member['jenis'] == 'Gold')
-    <div class="col-md-3">
+    <div class="col-md-3 mr-4 ml-4">
         <div class="card p-0 mx-auto" style="border: 3px solid black;">
             <img class="img-member" src="https://th.bing.com/th/id/OIP.MN_DSpmChqSjO6jqJjlUfgHaEw?pid=ImgDet&rs=1" class="card-img-top" alt="...">
             <div class="card-body text-bg-warning">
@@ -161,7 +161,7 @@
         </div>
     </div>
     @elseif ($member['jenis'] == 'Silver')
-    <div class="col-md-3">
+    <div class="col-md-3 mr-4 ml-4">
         <div class="card p-0 mx-auto" style="border: 3px solid black;">
             <img class="img-member" src="https://th.bing.com/th/id/OIP.MN_DSpmChqSjO6jqJjlUfgHaEw?pid=ImgDet&rs=1" class="card-img-top" alt="...">
             <div class="card-body text-bg-secondary">
@@ -174,7 +174,7 @@
         </div>
     </div>
     @elseif ($member['jenis'] == 'Black' && $member['metode'] == 'Deposit Kelas')
-    <div class="col-md-3">
+    <div class="col-md-3 mr-4 ml-4">
         <div class="card p-0 mx-auto" style="border: 3px solid white;">
             <img class="img-member" src="https://th.bing.com/th/id/OIP.MN_DSpmChqSjO6jqJjlUfgHaEw?pid=ImgDet&rs=1" class="card-img-top" alt="...">
             <div class="card-body text-bg-dark">
@@ -187,7 +187,7 @@
         </div>
     </div>
     @elseif ($member['jenis'] == 'Black' && $member['metode'] == 'Deposit Uang')
-    <div class="col-md-3">
+    <div class="col-md-3 mr-4 ml-4">
         <div class="card p-0 mx-auto" style="border: 3px solid white;">
             <img class="img-member" src="https://th.bing.com/th/id/OIP.MN_DSpmChqSjO6jqJjlUfgHaEw?pid=ImgDet&rs=1" class="card-img-top" alt="...">
             <div class="card-body text-bg-dark">
